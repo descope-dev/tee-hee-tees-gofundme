@@ -6,9 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate()
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const flowId = urlParams.get('flow') || process.env.REACT_APP_DESCOPE_SIGN_IN_FLOW_ID || "sign-up-or-in";
+  const flowId = localStorage.getItem('flowId') || process.env.REACT_APP_DESCOPE_FLOW_ID || "sign-up-or-in";
   
   return (
     <>
